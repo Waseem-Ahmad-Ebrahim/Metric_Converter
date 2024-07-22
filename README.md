@@ -20,8 +20,9 @@ Welcome to the Metric Converter project! This Java application allows users to p
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/metric-converter.git
-   cd metric-converter
+   git clone https://github.com/Waseem-Ahmad-Ebrahim/Metric_Converter.git
+   cd Metric_Converter
+   cd src
 
 2. **Compile the Java files:**
    
