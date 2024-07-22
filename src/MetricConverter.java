@@ -3,6 +3,11 @@ import java.util.Scanner;
 
 public class MetricConverter {
 
+    /**
+     * Main method to run the Metric Converter program.
+     * Displays conversion options and performs conversions based on user input.
+     * Allows the user to quit the program or choose different conversions until they decide to quit.
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -41,6 +46,12 @@ public class MetricConverter {
         scanner.close();
     }
 
+    /**
+     * Prompts the user to enter a conversion choice (1-3) or 0 to quit.
+     * Handles InputMismatchException if the user enters a non-integer value.
+     * @param scanner Scanner object to read user input
+     * @return User's choice of conversion (0 to quit, 1-3 for specific conversions)
+     */
     public static int getUserChoice(Scanner scanner) {
         int choice = -1;
         boolean validInput = false;
@@ -59,6 +70,10 @@ public class MetricConverter {
         return choice;
     }
 
+    /**
+     * Performs the Feet to Meters conversion based on user input.
+     * @param scanner Scanner object to read user input
+     */
     public static void performFeetToMetersConversion(Scanner scanner) {
         String fromUnit = "feet";
         String toUnit = "meters";
@@ -70,6 +85,10 @@ public class MetricConverter {
         printConversion(inputValue, fromUnit, result, toUnit);
     }
 
+    /**
+     * Performs the Pounds to Kilograms conversion based on user input.
+     * @param scanner Scanner object to read user input
+     */
     public static void performPoundsToKilogramsConversion(Scanner scanner) {
         String fromUnit = "pounds";
         String toUnit = "kilograms";
@@ -81,6 +100,10 @@ public class MetricConverter {
         printConversion(inputValue, fromUnit, result, toUnit);
     }
 
+    /**
+     * Performs the Fahrenheit to Celsius conversion based on user input.
+     * @param scanner Scanner object to read user input
+     */
     public static void performFahrenheitToCelsiusConversion(Scanner scanner) {
         String fromUnit = "Fahrenheit";
         String toUnit = "Celsius";
@@ -92,18 +115,38 @@ public class MetricConverter {
         printConversion(inputValue, fromUnit, result, toUnit);
     }
 
+    /**
+     * Converts feet to meters.
+     * @param feet Length in feet to convert
+     * @return Equivalent length in meters
+     */
     public static double feetToMeters(double feet) {
         return feet * 0.3048;
     }
 
+    /**
+     * Converts pounds to kilograms.
+     * @param pounds Weight in pounds to convert
+     * @return Equivalent weight in kilograms
+     */
     public static double poundsToKilograms(double pounds) {
         return pounds * 0.45359237;
     }
 
+    /**
+     * Converts Fahrenheit to Celsius.
+     * @param fahrenheit Temperature in Fahrenheit to convert
+     * @return Equivalent temperature in Celsius
+     */
     public static double fahrenheitToCelsius(double fahrenheit) {
         return (fahrenheit - 32) * 5 / 9;
     }
 
+    /**
+     * Prompts the user to enter a double value and handles InputMismatchException.
+     * @param scanner Scanner object to read user input
+     * @return Valid double value entered by the user
+     */
     public static double getDoubleInput(Scanner scanner) {
         double inputValue = 0.0;
         boolean validInput = false;
@@ -121,6 +164,13 @@ public class MetricConverter {
         return inputValue;
     }
 
+    /**
+     * Prints the result of a conversion in a formatted string.
+     * @param inputValue Original value entered by the user
+     * @param fromUnit Unit of the original value
+     * @param result Converted value
+     * @param toUnit Unit of the converted value
+     */
     public static void printConversion(double inputValue, String fromUnit, double result, String toUnit) {
         System.out.printf("%.2f %s is equal to %.2f %s.%n", inputValue, fromUnit, result, toUnit);
     }
