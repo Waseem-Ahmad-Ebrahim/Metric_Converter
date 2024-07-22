@@ -41,7 +41,7 @@ Welcome to the Metric Converter project! This Java application allows users to p
 - To exit the program, enter 0 when prompted for the conversion choice.
 
 ## Example
-
+![Metric Converter](Screenshots/Capture.JPG)
 
 ## Contributing
 Contributions are welcome! If you have any suggestions, improvements, or feature requests, please open an issue or a pull request on the GitHub repository.
