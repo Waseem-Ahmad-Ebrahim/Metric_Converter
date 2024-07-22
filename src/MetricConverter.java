@@ -11,13 +11,7 @@ public class MetricConverter {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("****************************************************************");
-        System.out.println("Welcome to the Metric Converter!");
-        System.out.println("****************************************************************");
-        System.out.println("Available conversions:");
-        System.out.println("1. Feet to Meters");
-        System.out.println("2. Pounds to Kilograms");
-        System.out.println("3. Fahrenheit to Celsius");
+        printMenu();
 
         boolean continueConversion = true;
 
@@ -25,25 +19,30 @@ public class MetricConverter {
             int choice = getUserChoice(scanner);
 
             switch (choice) {
-                case 0:
+                case 0 -> {
                     System.out.println("Exiting the Metric Converter. Goodbye!");
                     continueConversion = false;
-                    break;
-                case 1:
-                    performFeetToMetersConversion(scanner);
-                    break;
-                case 2:
-                    performPoundsToKilogramsConversion(scanner);
-                    break;
-                case 3:
-                    performFahrenheitToCelsiusConversion(scanner);
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please enter a number between 0 and 3.");
-                    break;
+                }
+                case 1 -> performFeetToMetersConversion(scanner);
+                case 2 -> performPoundsToKilogramsConversion(scanner);
+                case 3 -> performFahrenheitToCelsiusConversion(scanner);
+                default -> System.out.println("Invalid choice. Please enter a number between 0 and 3.");
             }
         }
         scanner.close();
+    }
+
+    /**
+     * Displays the welcome message and menu options for the Metric Converter program.
+     */
+    public static void printMenu() {
+        System.out.println("****************************************************************");
+        System.out.println("Welcome to the Metric Converter!");
+        System.out.println("****************************************************************");
+        System.out.println("Available conversions:");
+        System.out.println("1. Feet to Meters");
+        System.out.println("2. Pounds to Kilograms");
+        System.out.println("3. Fahrenheit to Celsius");
     }
 
     /**
@@ -121,7 +120,7 @@ public class MetricConverter {
      * @return Equivalent length in meters
      */
     public static double feetToMeters(double feet) {
-        return feet * 0.3048;
+        return feet * 0.305;
     }
 
     /**
@@ -130,7 +129,7 @@ public class MetricConverter {
      * @return Equivalent weight in kilograms
      */
     public static double poundsToKilograms(double pounds) {
-        return pounds * 0.45359237;
+        return pounds * 0.454;
     }
 
     /**
